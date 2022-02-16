@@ -2,7 +2,7 @@ import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from "../actions/todo_action
 
 const todosReducer = (state = initialState, action) => {
     Object.freeze(state);
-    const nextState = Object.assign({}, state);
+    let nextState = {};
 
     switch (action.type) {
         case RECEIVE_TODOS:
@@ -13,6 +13,7 @@ const todosReducer = (state = initialState, action) => {
             });
             return nextState;
         case RECEIVE_TODO:
+            nextState = Object.assign({}, state);
             nextState[action.todo.id] = action.todo;
             return nextState;
         case REMOVE_TODO:
