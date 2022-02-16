@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { TodoListItem } from '../todo_list/todo_list_item';
 
 export default (props) => (
