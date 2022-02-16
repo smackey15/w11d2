@@ -7,6 +7,7 @@ import Root from "./frontend/components/root"
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore();
     ReactDOM.render(<Root store={ store }/>, document.getElementById('root'));
+
     window.store = store;
     window.receiveTodos = receiveTodos;
     window.receiveTodo = receiveTodo;
