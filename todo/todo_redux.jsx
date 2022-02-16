@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from "./frontend/store/store";
 import { receiveTodo, receiveTodos, removeTodo } from "./frontend/actions/todo_actions";
 import Root from "./frontend/components/root"
+import { allTodos } from "./frontend/reducers/selectors";
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.receiveTodos = receiveTodos;
     window.receiveTodo = receiveTodo;
     window.removeTodo = removeTodo;
+    window.allTodos = allTodos;
 });
