@@ -1,5 +1,5 @@
 import React from 'react';
-import { receiveTodo } from '../../actions/todo_actions';
+// import { receiveTodo } from '../../actions/todo_actions';
 import Util from '../util';
 
 class TodoForm extends React.Component {
@@ -9,6 +9,7 @@ class TodoForm extends React.Component {
         this.updateTitle.bind(this);
         this.updateBody.bind(this);
         this.updateDone.bind(this);
+        this.handleSubmit.bind(this);
     }
 
     updateTitle(e) {
@@ -21,6 +22,12 @@ class TodoForm extends React.Component {
 
     updateDone(e) {
         this.setState({ done: e.target.value })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.receiveTodo(this.state);
+        this.setState({ id: Util.uniqueId(), title: "", body: "", done: false });
     }
 
     render() {
